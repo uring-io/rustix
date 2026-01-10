@@ -706,20 +706,8 @@ bitflags::bitflags! {
     #[repr(transparent)]
     #[derive(Default, Copy, Clone, Eq, PartialEq, Hash, Debug)]
     pub struct IoringSetupFlags: u32 {
-        /// `IORING_SETUP_ATTACH_WQ`
-        const ATTACH_WQ = sys::IORING_SETUP_ATTACH_WQ;
-
-        /// `IORING_SETUP_CLAMP`
-        const CLAMP = sys::IORING_SETUP_CLAMP;
-
-        /// `IORING_SETUP_CQSIZE`
-        const CQSIZE = sys::IORING_SETUP_CQSIZE;
-
         /// `IORING_SETUP_IOPOLL`
         const IOPOLL = sys::IORING_SETUP_IOPOLL;
-
-        /// `IORING_SETUP_R_DISABLED`
-        const R_DISABLED = sys::IORING_SETUP_R_DISABLED;
 
         /// `IORING_SETUP_SQPOLL`
         const SQPOLL = sys::IORING_SETUP_SQPOLL;
@@ -727,11 +715,17 @@ bitflags::bitflags! {
         /// `IORING_SETUP_SQ_AFF`
         const SQ_AFF = sys::IORING_SETUP_SQ_AFF;
 
-        /// `IORING_SETUP_SQE128`
-        const SQE128 = sys::IORING_SETUP_SQE128;
+        /// `IORING_SETUP_CQSIZE`
+        const CQSIZE = sys::IORING_SETUP_CQSIZE;
 
-        /// `IORING_SETUP_CQE32`
-        const CQE32 = sys::IORING_SETUP_CQE32;
+        /// `IORING_SETUP_CLAMP`
+        const CLAMP = sys::IORING_SETUP_CLAMP;
+
+        /// `IORING_SETUP_ATTACH_WQ`
+        const ATTACH_WQ = sys::IORING_SETUP_ATTACH_WQ;
+
+        /// `IORING_SETUP_R_DISABLED`
+        const R_DISABLED = sys::IORING_SETUP_R_DISABLED;
 
         /// `IORING_SETUP_SUBMIT_ALL`
         const SUBMIT_ALL = sys::IORING_SETUP_SUBMIT_ALL;
@@ -741,6 +735,12 @@ bitflags::bitflags! {
 
         /// `IORING_SETUP_TASKRUN_FLAG`
         const TASKRUN_FLAG = sys::IORING_SETUP_TASKRUN_FLAG;
+
+        /// `IORING_SETUP_SQE128`
+        const SQE128 = sys::IORING_SETUP_SQE128;
+
+        /// `IORING_SETUP_CQE32`
+        const CQE32 = sys::IORING_SETUP_CQE32;
 
         /// `IORING_SETUP_SINGLE_ISSUER`
         const SINGLE_ISSUER = sys::IORING_SETUP_SINGLE_ISSUER;
@@ -756,6 +756,15 @@ bitflags::bitflags! {
 
         /// `IORING_SETUP_NO_SQARRAY`
         const NO_SQARRAY = sys::IORING_SETUP_NO_SQARRAY;
+
+        /// `IORING_SETUP_HYBRID_IOPOLL`
+        const HYBRID_IOPOLL = sys::IORING_SETUP_HYBRID_IOPOLL;
+
+        /// `IORING_SETUP_CQE_MIXED`
+        const CQE_MIXED = 1 << 18; // TODO: sys::IORING_SETUP_CQE_MIXED;
+
+        /// `IORING_SETUP_SQE_MIXED`
+        const SQE_MIXED = 1 << 19; // TODO: sys::IORING_SETUP_SQE_MIXED;
 
         /// <https://docs.rs/bitflags/*/bitflags/#externally-defined-flags>
         const _ = !0;
