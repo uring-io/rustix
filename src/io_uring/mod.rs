@@ -819,6 +819,15 @@ bitflags::bitflags! {
         /// `IORING_CQE_F_NOTIF`
         const NOTIF = bitcast!(sys::IORING_CQE_F_NOTIF);
 
+        /// `IORING_CQE_F_BUF_MORE`
+        const BUF_MORE = bitcast!(sys::IORING_CQE_F_BUF_MORE);
+
+        /// `IORING_CQE_F_SKIP`
+        const SKIP = 1 << 5; // TODO: bitcast!(sys::IORING_CQE_F_SKIP);
+
+        /// `IORING_CQE_F_32`
+        const CQE_32 = 1 << 15; // TODO: bitcast!(sys::IORING_CQE_F_32);
+
         /// <https://docs.rs/bitflags/*/bitflags/#externally-defined-flags>
         const _ = !0;
     }
