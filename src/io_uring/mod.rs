@@ -482,50 +482,20 @@ pub enum IoringOp {
     /// `IORING_OP_NOP`
     Nop = sys::io_uring_op::IORING_OP_NOP as _,
 
-    /// `IORING_OP_ACCEPT`
-    Accept = sys::io_uring_op::IORING_OP_ACCEPT as _,
+    /// `IORING_OP_READV`
+    Readv = sys::io_uring_op::IORING_OP_READV as _,
 
-    /// `IORING_OP_ASYNC_CANCEL`
-    AsyncCancel = sys::io_uring_op::IORING_OP_ASYNC_CANCEL as _,
-
-    /// `IORING_OP_CLOSE`
-    Close = sys::io_uring_op::IORING_OP_CLOSE as _,
-
-    /// `IORING_OP_CONNECT`
-    Connect = sys::io_uring_op::IORING_OP_CONNECT as _,
-
-    /// `IORING_OP_EPOLL_CTL`
-    EpollCtl = sys::io_uring_op::IORING_OP_EPOLL_CTL as _,
-
-    /// `IORING_OP_FADVISE`
-    Fadvise = sys::io_uring_op::IORING_OP_FADVISE as _,
-
-    /// `IORING_OP_FALLOCATE`
-    Fallocate = sys::io_uring_op::IORING_OP_FALLOCATE as _,
-
-    /// `IORING_OP_FILES_UPDATE`
-    FilesUpdate = sys::io_uring_op::IORING_OP_FILES_UPDATE as _,
+    /// `IORING_OP_WRITEV`
+    Writev = sys::io_uring_op::IORING_OP_WRITEV as _,
 
     /// `IORING_OP_FSYNC`
     Fsync = sys::io_uring_op::IORING_OP_FSYNC as _,
 
-    /// `IORING_OP_LINKAT`
-    Linkat = sys::io_uring_op::IORING_OP_LINKAT as _,
+    /// `IORING_OP_READ_FIXED`
+    ReadFixed = sys::io_uring_op::IORING_OP_READ_FIXED as _,
 
-    /// `IORING_OP_LINK_TIMEOUT`
-    LinkTimeout = sys::io_uring_op::IORING_OP_LINK_TIMEOUT as _,
-
-    /// `IORING_OP_MADVISE`
-    Madvise = sys::io_uring_op::IORING_OP_MADVISE as _,
-
-    /// `IORING_OP_MKDIRAT`
-    Mkdirat = sys::io_uring_op::IORING_OP_MKDIRAT as _,
-
-    /// `IORING_OP_OPENAT`
-    Openat = sys::io_uring_op::IORING_OP_OPENAT as _,
-
-    /// `IORING_OP_OPENAT2`
-    Openat2 = sys::io_uring_op::IORING_OP_OPENAT2 as _,
+    /// `IORING_OP_WRITE_FIXED`
+    WriteFixed = sys::io_uring_op::IORING_OP_WRITE_FIXED as _,
 
     /// `IORING_OP_POLL_ADD`
     PollAdd = sys::io_uring_op::IORING_OP_POLL_ADD as _,
@@ -533,53 +503,14 @@ pub enum IoringOp {
     /// `IORING_OP_POLL_REMOVE`
     PollRemove = sys::io_uring_op::IORING_OP_POLL_REMOVE as _,
 
-    /// `IORING_OP_PROVIDE_BUFFERS`
-    ProvideBuffers = sys::io_uring_op::IORING_OP_PROVIDE_BUFFERS as _,
-
-    /// `IORING_OP_READ`
-    Read = sys::io_uring_op::IORING_OP_READ as _,
-
-    /// `IORING_OP_READV`
-    Readv = sys::io_uring_op::IORING_OP_READV as _,
-
-    /// `IORING_OP_READ_FIXED`
-    ReadFixed = sys::io_uring_op::IORING_OP_READ_FIXED as _,
-
-    /// `IORING_OP_RECV`
-    Recv = sys::io_uring_op::IORING_OP_RECV as _,
-
-    /// `IORING_OP_RECVMSG`
-    Recvmsg = sys::io_uring_op::IORING_OP_RECVMSG as _,
-
-    /// `IORING_OP_REMOVE_BUFFERS`
-    RemoveBuffers = sys::io_uring_op::IORING_OP_REMOVE_BUFFERS as _,
-
-    /// `IORING_OP_RENAMEAT`
-    Renameat = sys::io_uring_op::IORING_OP_RENAMEAT as _,
-
-    /// `IORING_OP_SEND`
-    Send = sys::io_uring_op::IORING_OP_SEND as _,
+    /// `IORING_OP_SYNC_FILE_RANGE`
+    SyncFileRange = sys::io_uring_op::IORING_OP_SYNC_FILE_RANGE as _,
 
     /// `IORING_OP_SENDMSG`
     Sendmsg = sys::io_uring_op::IORING_OP_SENDMSG as _,
 
-    /// `IORING_OP_SHUTDOWN`
-    Shutdown = sys::io_uring_op::IORING_OP_SHUTDOWN as _,
-
-    /// `IORING_OP_SPLICE`
-    Splice = sys::io_uring_op::IORING_OP_SPLICE as _,
-
-    /// `IORING_OP_STATX`
-    Statx = sys::io_uring_op::IORING_OP_STATX as _,
-
-    /// `IORING_OP_SYMLINKAT`
-    Symlinkat = sys::io_uring_op::IORING_OP_SYMLINKAT as _,
-
-    /// `IORING_OP_SYNC_FILE_RANGE`
-    SyncFileRange = sys::io_uring_op::IORING_OP_SYNC_FILE_RANGE as _,
-
-    /// `IORING_OP_TEE`
-    Tee = sys::io_uring_op::IORING_OP_TEE as _,
+    /// `IORING_OP_RECVMSG`
+    Recvmsg = sys::io_uring_op::IORING_OP_RECVMSG as _,
 
     /// `IORING_OP_TIMEOUT`
     Timeout = sys::io_uring_op::IORING_OP_TIMEOUT as _,
@@ -587,17 +518,86 @@ pub enum IoringOp {
     /// `IORING_OP_TIMEOUT_REMOVE`
     TimeoutRemove = sys::io_uring_op::IORING_OP_TIMEOUT_REMOVE as _,
 
-    /// `IORING_OP_UNLINKAT`
-    Unlinkat = sys::io_uring_op::IORING_OP_UNLINKAT as _,
+    /// `IORING_OP_ACCEPT`
+    Accept = sys::io_uring_op::IORING_OP_ACCEPT as _,
+
+    /// `IORING_OP_ASYNC_CANCEL`
+    AsyncCancel = sys::io_uring_op::IORING_OP_ASYNC_CANCEL as _,
+
+    /// `IORING_OP_LINK_TIMEOUT`
+    LinkTimeout = sys::io_uring_op::IORING_OP_LINK_TIMEOUT as _,
+
+    /// `IORING_OP_CONNECT`
+    Connect = sys::io_uring_op::IORING_OP_CONNECT as _,
+
+    /// `IORING_OP_FALLOCATE`
+    Fallocate = sys::io_uring_op::IORING_OP_FALLOCATE as _,
+
+    /// `IORING_OP_OPENAT`
+    Openat = sys::io_uring_op::IORING_OP_OPENAT as _,
+
+    /// `IORING_OP_CLOSE`
+    Close = sys::io_uring_op::IORING_OP_CLOSE as _,
+
+    /// `IORING_OP_FILES_UPDATE`
+    FilesUpdate = sys::io_uring_op::IORING_OP_FILES_UPDATE as _,
+
+    /// `IORING_OP_STATX`
+    Statx = sys::io_uring_op::IORING_OP_STATX as _,
+
+    /// `IORING_OP_READ`
+    Read = sys::io_uring_op::IORING_OP_READ as _,
 
     /// `IORING_OP_WRITE`
     Write = sys::io_uring_op::IORING_OP_WRITE as _,
 
-    /// `IORING_OP_WRITEV`
-    Writev = sys::io_uring_op::IORING_OP_WRITEV as _,
+    /// `IORING_OP_FADVISE`
+    Fadvise = sys::io_uring_op::IORING_OP_FADVISE as _,
 
-    /// `IORING_OP_WRITE_FIXED`
-    WriteFixed = sys::io_uring_op::IORING_OP_WRITE_FIXED as _,
+    /// `IORING_OP_MADVISE`
+    Madvise = sys::io_uring_op::IORING_OP_MADVISE as _,
+
+    /// `IORING_OP_SEND`
+    Send = sys::io_uring_op::IORING_OP_SEND as _,
+
+    /// `IORING_OP_RECV`
+    Recv = sys::io_uring_op::IORING_OP_RECV as _,
+
+    /// `IORING_OP_OPENAT2`
+    Openat2 = sys::io_uring_op::IORING_OP_OPENAT2 as _,
+
+    /// `IORING_OP_EPOLL_CTL`
+    EpollCtl = sys::io_uring_op::IORING_OP_EPOLL_CTL as _,
+
+    /// `IORING_OP_SPLICE`
+    Splice = sys::io_uring_op::IORING_OP_SPLICE as _,
+
+    /// `IORING_OP_PROVIDE_BUFFERS`
+    ProvideBuffers = sys::io_uring_op::IORING_OP_PROVIDE_BUFFERS as _,
+
+    /// `IORING_OP_REMOVE_BUFFERS`
+    RemoveBuffers = sys::io_uring_op::IORING_OP_REMOVE_BUFFERS as _,
+
+    /// `IORING_OP_TEE`
+    Tee = sys::io_uring_op::IORING_OP_TEE as _,
+
+    /// `IORING_OP_SHUTDOWN`
+    Shutdown = sys::io_uring_op::IORING_OP_SHUTDOWN as _,
+
+    /// `IORING_OP_RENAMEAT`
+    Renameat = sys::io_uring_op::IORING_OP_RENAMEAT as _,
+
+    /// `IORING_OP_UNLINKAT`
+    Unlinkat = sys::io_uring_op::IORING_OP_UNLINKAT as _,
+
+    /// `IORING_OP_MKDIRAT`
+    Mkdirat = sys::io_uring_op::IORING_OP_MKDIRAT as _,
+
+    /// `IORING_OP_SYMLINKAT`
+    Symlinkat = sys::io_uring_op::IORING_OP_SYMLINKAT as _,
+
+    /// `IORING_OP_LINKAT`
+    Linkat = sys::io_uring_op::IORING_OP_LINKAT as _,
 
     /// `IORING_OP_MSG_RING`
     MsgRing = sys::io_uring_op::IORING_OP_MSG_RING as _,
@@ -652,6 +652,27 @@ pub enum IoringOp {
 
     /// `IORING_OP_LISTEN` (since Linux 6.11)
     Listen = sys::io_uring_op::IORING_OP_LISTEN as _,
+
+    /// `IORING_OP_RECV_ZC`
+    RecvZc = sys::io_uring_op::IORING_OP_RECV_ZC as _,
+
+    /// `IORING_OP_EPOLL_WAIT`
+    EpollWait = sys::io_uring_op::IORING_OP_EPOLL_WAIT as _,
+
+    /// `IORING_OP_READV_FIXED`
+    ReadvFixed = sys::io_uring_op::IORING_OP_READV_FIXED as _,
+
+    /// `IORING_OP_WRITEV_FIXED`
+    WritevFixed = sys::io_uring_op::IORING_OP_WRITEV_FIXED as _,
+
+    /// `IORING_OP_PIPE`
+    Pipe = sys::io_uring_op::IORING_OP_PIPE as _,
+
+    /// `IORING_OP_NOP128`
+    Nop128 = 63, // TODO: sys::io_uring_op::IORING_OP_NOP128 as _,
+
+    /// `IORING_OP_URING_CMD128`
+    UringCmd128 = 64, // TODO: sys::io_uring_op::IORING_OP_URING_CMD128 as _,
 }
 
 impl Default for IoringOp {
