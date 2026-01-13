@@ -400,17 +400,17 @@ pub enum IoringRegisterOp {
     /// `IORING_REGISTER_ENABLE_RINGS`
     RegisterEnableRings = sys::io_uring_register_op::IORING_REGISTER_ENABLE_RINGS as _,
 
-    /// `IORING_REGISTER_BUFFERS2`
-    RegisterBuffers2 = sys::io_uring_register_op::IORING_REGISTER_BUFFERS2 as _,
-
-    /// `IORING_REGISTER_BUFFERS_UPDATE`
-    RegisterBuffersUpdate = sys::io_uring_register_op::IORING_REGISTER_BUFFERS_UPDATE as _,
-
     /// `IORING_REGISTER_FILES2`
     RegisterFiles2 = sys::io_uring_register_op::IORING_REGISTER_FILES2 as _,
 
     /// `IORING_REGISTER_FILES_UPDATE2`
     RegisterFilesUpdate2 = sys::io_uring_register_op::IORING_REGISTER_FILES_UPDATE2 as _,
+
+    /// `IORING_REGISTER_BUFFERS2`
+    RegisterBuffers2 = sys::io_uring_register_op::IORING_REGISTER_BUFFERS2 as _,
+
+    /// `IORING_REGISTER_BUFFERS_UPDATE`
+    RegisterBuffersUpdate = sys::io_uring_register_op::IORING_REGISTER_BUFFERS_UPDATE as _,
 
     /// `IORING_REGISTER_IOWQ_AFF`
     RegisterIowqAff = sys::io_uring_register_op::IORING_REGISTER_IOWQ_AFF as _,
@@ -457,8 +457,20 @@ pub enum IoringRegisterOp {
     /// `IORING_REGISTER_SEND_MSG_RING` (since Linux 6.12)
     RegisterSendMsgRing = sys::io_uring_register_op::IORING_REGISTER_SEND_MSG_RING as _,
 
+    /// `IORING_REGISTER_ZCRX_IFQ`
+    RegisterZcrxIfq = sys::io_uring_register_op::IORING_REGISTER_ZCRX_IFQ as _,
+
     /// `IORING_REGISTER_RESIZE_RINGS`(since Linux 6.13)
     RegisterResizeRings = sys::io_uring_register_op::IORING_REGISTER_RESIZE_RINGS as _,
+
+    /// `IORING_REGISTER_MEM_REGION`
+    RegisterMemRegion = sys::io_uring_register_op::IORING_REGISTER_MEM_REGION as _,
+
+    /// `IORING_REGISTER_QUERY`
+    RegisterQuery = 35, // TODO: sys::io_uring_register_op::IORING_REGISTER_QUERY as _,
+
+    /// `IORING_REGISTER_ZCRX_CTRL`
+    RegisterZcrxCtrl = 36, // TODO: sys::io_uring_register_op::IORING_REGISTER_ZCRX_CTRL as _,
 }
 
 bitflags::bitflags! {
