@@ -702,6 +702,9 @@ pub enum IoringRestrictionOp {
     /// `IORING_RESTRICTION_REGISTER_OP`
     RegisterOp = sys::io_uring_register_restriction_op::IORING_RESTRICTION_REGISTER_OP as _,
 
+    /// `IORING_RESTRICTION_SQE_OP`
+    SqeOp = sys::io_uring_register_restriction_op::IORING_RESTRICTION_SQE_OP as _,
+
     /// `IORING_RESTRICTION_SQE_FLAGS_ALLOWED`
     SqeFlagsAllowed =
         sys::io_uring_register_restriction_op::IORING_RESTRICTION_SQE_FLAGS_ALLOWED as _,
@@ -709,9 +712,6 @@ pub enum IoringRestrictionOp {
     /// `IORING_RESTRICTION_SQE_FLAGS_REQUIRED`
     SqeFlagsRequired =
         sys::io_uring_register_restriction_op::IORING_RESTRICTION_SQE_FLAGS_REQUIRED as _,
-
-    /// `IORING_RESTRICTION_SQE_OP`
-    SqeOp = sys::io_uring_register_restriction_op::IORING_RESTRICTION_SQE_OP as _,
 }
 
 impl Default for IoringRestrictionOp {
