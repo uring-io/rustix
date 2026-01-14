@@ -24,7 +24,7 @@ bitflags! {
     /// [`preadv2`]: crate::io::preadv2
     /// [`pwritev2`]: crate::io::pwritev
     #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
+    #[derive(Default, Copy, Clone, Eq, PartialEq, Hash, Debug)]
     pub struct ReadWriteFlags: u32 {
         /// `RWF_DSYNC` (since Linux 4.7)
         const DSYNC = libc::RWF_DSYNC as u32;
