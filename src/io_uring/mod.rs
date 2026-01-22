@@ -350,6 +350,9 @@ bitflags::bitflags! {
         /// `IORING_ENTER_EXT_ARG_REG` (since Linux 6.12)
         const EXT_ARG_REG = sys::IORING_ENTER_EXT_ARG_REG;
 
+        /// `IORING_ENTER_NO_IOWAIT`
+        const NO_IOWAIT = sys::IORING_ENTER_NO_IOWAIT;
+
         /// <https://docs.rs/bitflags/*/bitflags/#externally-defined-flags>
         const _ = !0;
     }
