@@ -812,23 +812,23 @@ bitflags::bitflags! {
     #[repr(transparent)]
     #[derive(Default, Copy, Clone, Eq, PartialEq, Hash, Debug)]
     pub struct IoringSqeFlags: u8 {
-        /// `1 << IOSQE_ASYNC_BIT`
-        const ASYNC = 1 << sys::io_uring_sqe_flags_bit::IOSQE_ASYNC_BIT as u8;
-
-        /// `1 << IOSQE_BUFFER_SELECT_BIT`
-        const BUFFER_SELECT = 1 << sys::io_uring_sqe_flags_bit::IOSQE_BUFFER_SELECT_BIT as u8;
-
         /// `1 << IOSQE_FIXED_FILE_BIT`
         const FIXED_FILE = 1 << sys::io_uring_sqe_flags_bit::IOSQE_FIXED_FILE_BIT as u8;
 
         /// 1 << `IOSQE_IO_DRAIN_BIT`
         const IO_DRAIN = 1 << sys::io_uring_sqe_flags_bit::IOSQE_IO_DRAIN_BIT as u8;
 
+        /// `1 << IOSQE_IO_LINK_BIT`
+        const IO_LINK = 1 << sys::io_uring_sqe_flags_bit::IOSQE_IO_LINK_BIT as u8;
+
         /// `1 << IOSQE_IO_HARDLINK_BIT`
         const IO_HARDLINK = 1 << sys::io_uring_sqe_flags_bit::IOSQE_IO_HARDLINK_BIT as u8;
 
-        /// `1 << IOSQE_IO_LINK_BIT`
-        const IO_LINK = 1 << sys::io_uring_sqe_flags_bit::IOSQE_IO_LINK_BIT as u8;
+        /// `1 << IOSQE_ASYNC_BIT`
+        const ASYNC = 1 << sys::io_uring_sqe_flags_bit::IOSQE_ASYNC_BIT as u8;
+
+        /// `1 << IOSQE_BUFFER_SELECT_BIT`
+        const BUFFER_SELECT = 1 << sys::io_uring_sqe_flags_bit::IOSQE_BUFFER_SELECT_BIT as u8;
 
         /// `1 << IOSQE_CQE_SKIP_SUCCESS_BIT`
         const CQE_SKIP_SUCCESS = 1 << sys::io_uring_sqe_flags_bit::IOSQE_CQE_SKIP_SUCCESS_BIT as u8;
