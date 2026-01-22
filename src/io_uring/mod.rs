@@ -1002,41 +1002,41 @@ bitflags::bitflags! {
     #[repr(transparent)]
     #[derive(Default, Copy, Clone, Eq, PartialEq, Hash, Debug)]
     pub struct IoringFeatureFlags: u32 {
-        /// `IORING_FEAT_CQE_SKIP`
-        const CQE_SKIP = sys::IORING_FEAT_CQE_SKIP;
-
-        /// `IORING_FEAT_CUR_PERSONALITY`
-        const CUR_PERSONALITY = sys::IORING_FEAT_CUR_PERSONALITY;
-
-        /// `IORING_FEAT_EXT_ARG`
-        const EXT_ARG = sys::IORING_FEAT_EXT_ARG;
-
-        /// `IORING_FEAT_FAST_POLL`
-        const FAST_POLL = sys::IORING_FEAT_FAST_POLL;
-
-        /// `IORING_FEAT_NATIVE_WORKERS`
-        const NATIVE_WORKERS = sys::IORING_FEAT_NATIVE_WORKERS;
+        /// `IORING_FEAT_SINGLE_MMAP`
+        const SINGLE_MMAP = sys::IORING_FEAT_SINGLE_MMAP;
 
         /// `IORING_FEAT_NODROP`
         const NODROP = sys::IORING_FEAT_NODROP;
 
-        /// `IORING_FEAT_POLL_32BITS`
-        const POLL_32BITS = sys::IORING_FEAT_POLL_32BITS;
-
-        /// `IORING_FEAT_RSRC_TAGS`
-        const RSRC_TAGS = sys::IORING_FEAT_RSRC_TAGS;
+        /// `IORING_FEAT_SUBMIT_STABLE`
+        const SUBMIT_STABLE = sys::IORING_FEAT_SUBMIT_STABLE;
 
         /// `IORING_FEAT_RW_CUR_POS`
         const RW_CUR_POS = sys::IORING_FEAT_RW_CUR_POS;
 
-        /// `IORING_FEAT_SINGLE_MMAP`
-        const SINGLE_MMAP = sys::IORING_FEAT_SINGLE_MMAP;
+        /// `IORING_FEAT_CUR_PERSONALITY`
+        const CUR_PERSONALITY = sys::IORING_FEAT_CUR_PERSONALITY;
+
+        /// `IORING_FEAT_FAST_POLL`
+        const FAST_POLL = sys::IORING_FEAT_FAST_POLL;
+
+        /// `IORING_FEAT_POLL_32BITS`
+        const POLL_32BITS = sys::IORING_FEAT_POLL_32BITS;
 
         /// `IORING_FEAT_SQPOLL_NONFIXED`
         const SQPOLL_NONFIXED = sys::IORING_FEAT_SQPOLL_NONFIXED;
 
-        /// `IORING_FEAT_SUBMIT_STABLE`
-        const SUBMIT_STABLE = sys::IORING_FEAT_SUBMIT_STABLE;
+        /// `IORING_FEAT_EXT_ARG`
+        const EXT_ARG = sys::IORING_FEAT_EXT_ARG;
+
+        /// `IORING_FEAT_NATIVE_WORKERS`
+        const NATIVE_WORKERS = sys::IORING_FEAT_NATIVE_WORKERS;
+
+        /// `IORING_FEAT_RSRC_TAGS`
+        const RSRC_TAGS = sys::IORING_FEAT_RSRC_TAGS;
+
+        /// `IORING_FEAT_CQE_SKIP`
+        const CQE_SKIP = sys::IORING_FEAT_CQE_SKIP;
 
         /// `IORING_FEAT_LINKED_FILE`
         const LINKED_FILE = sys::IORING_FEAT_LINKED_FILE;
@@ -1046,6 +1046,15 @@ bitflags::bitflags! {
 
         /// `IORING_FEAT_RECVSEND_BUNDLE`
         const RECVSEND_BUNDLE = sys::IORING_FEAT_RECVSEND_BUNDLE;
+
+        /// `IORING_FEAT_MIN_TIMEOUT`
+        const MIN_TIMEOUT = sys::IORING_FEAT_MIN_TIMEOUT;
+
+        /// `IORING_FEAT_RW_ATTR`
+        const RW_ATTR = sys::IORING_FEAT_RW_ATTR;
+
+        /// `IORING_FEAT_NO_IOWAIT`
+        const NO_IOWAIT = sys::IORING_FEAT_NO_IOWAIT;
 
         /// <https://docs.rs/bitflags/*/bitflags/#externally-defined-flags>
         const _ = !0;
