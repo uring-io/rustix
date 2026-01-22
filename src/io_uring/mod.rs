@@ -957,6 +957,9 @@ bitflags::bitflags! {
         /// `IORING_URING_CMD_FIXED`
         const FIXED = sys::IORING_URING_CMD_FIXED;
 
+        /// `IORING_URING_CMD_MULTISHOT`
+        const MULTISHOT = 1 << 1; // TODO: sys::IORING_URING_CMD_MULTISHOT;
+
         /// `IORING_URING_CMD_MASK`
         const MASK = sys::IORING_URING_CMD_MASK;
 
