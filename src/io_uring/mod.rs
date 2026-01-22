@@ -897,20 +897,23 @@ bitflags::bitflags! {
         /// `IORING_TIMEOUT_BOOTTIME`
         const BOOTTIME = sys::IORING_TIMEOUT_BOOTTIME;
 
+        /// `IORING_TIMEOUT_REALTIME`
+        const REALTIME = sys::IORING_TIMEOUT_REALTIME;
+
+        /// `IORING_LINK_TIMEOUT_UPDATE`
+        const LINK_TIMEOUT_UPDATE = sys::IORING_LINK_TIMEOUT_UPDATE;
+
         /// `IORING_TIMEOUT_ETIME_SUCCESS`
         const ETIME_SUCCESS = sys::IORING_TIMEOUT_ETIME_SUCCESS;
 
-        /// `IORING_TIMEOUT_REALTIME`
-        const REALTIME = sys::IORING_TIMEOUT_REALTIME;
+        /// `IORING_TIMEOUT_MULTISHOT`
+        const MULTISHOT = sys::IORING_TIMEOUT_MULTISHOT;
 
         /// `IORING_TIMEOUT_CLOCK_MASK`
         const CLOCK_MASK = sys::IORING_TIMEOUT_CLOCK_MASK;
 
         /// `IORING_TIMEOUT_UPDATE_MASK`
         const UPDATE_MASK = sys::IORING_TIMEOUT_UPDATE_MASK;
-
-        /// `IORING_LINK_TIMEOUT_UPDATE`
-        const LINK_TIMEOUT_UPDATE = sys::IORING_LINK_TIMEOUT_UPDATE;
 
         /// <https://docs.rs/bitflags/*/bitflags/#externally-defined-flags>
         const _ = !0;
